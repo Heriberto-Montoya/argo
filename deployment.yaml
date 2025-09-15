@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gfb-hello-world
+  labels:
+    app: gfb-hello-world
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gfb-hello-world
+  template:
+    metadata:
+      labels:
+        app: gfb-hello-world
+    spec:
+      containers:
+        - name: gfb-hello-world
+          image: gfb-hello-world:latest
+          ports:
+            - containerPort: 8002
+          resources:
+            requests:
+              memory: "128Mi"
+              cpu: "250m"
+            limits:
+              memory: "256Mi"
+              cpu: "500m"
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: gfb-hello-world-service
+spec:
+  selector:
+    app: gfb-hello-world
+  ports:
+    - name: helloworld 
+      protocol: TCP
+      port: 8002
+      targetPort: 8002
+  type: ClusterIP
+
+
