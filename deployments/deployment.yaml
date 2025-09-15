@@ -5,7 +5,7 @@ metadata:
   labels:
     app: gfb-hello-world
 spec:
-  replicas: 5
+  replicas: 1
   selector:
     matchLabels:
       app: gfb-hello-world
