@@ -17,7 +17,6 @@ spec:
       containers:
         - name: gfb-hello-world
           image: developitl/gfb-hello-world:latest
-          imagePullPolicy: Never
           ports:
             - containerPort: 8002
           resources:
