@@ -18,7 +18,7 @@ spec:
         - name: gfb-hello-world
           image: developitl/gfb-hello-world:latest
           ports:
-            - containerPort: 8002
+            - containerPort: 8001
           resources:
             requests:
               memory: "128Mi"
