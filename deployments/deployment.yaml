@@ -5,7 +5,7 @@ metadata:
   labels:
     app: gfb-hello-world
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: gfb-hello-world
@@ -18,7 +18,7 @@ spec:
         - name: gfb-hello-world
           image: developitl/gfb-hello-world:latest
           ports:
-            - containerPort: 8001
+            - containerPort: 8080
           resources:
             requests:
               memory: "128Mi"
@@ -39,8 +39,8 @@ spec:
   ports:
     - name: helloworld 
       protocol: TCP
-      port: 8001
-      targetPort: 8001
+      port: 8080
+      targetPort: 8080
   type: ClusterIP
 
 
